@@ -32,13 +32,15 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.auth', #userauthentication
+    'django.contrib.contenttypes',#userauthentication
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djangoapp' #local
+    'djangoapp',
 ]
+
+AUTH_USER_MODEL = 'djangoapp.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,12 +53,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'djangoproject1.urls'
-TEMPLATES_DIR = os.path.join(BASE_DIR,'template')
+##TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
+
+
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
