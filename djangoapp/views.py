@@ -1,27 +1,27 @@
-'''from django.shortcuts import render,redirect,HttpResponse
-from .forms import CustomUserCreationForm
+from django.shortcuts import render,redirect,HttpResponse
+from .forms import SignupSubmitForm
 
 from django.contrib.auth import login,logout,authenticate
-from .models import CustomUser
+from .models import Custom,Register
 
 # Create your views here.
 
 
 def sign_up(request):
     
-    detail_list = CustomUser.objects.all().values()
+    detail_list = Register.objects.all().values()
     if request.method == 'POST':
-        fm = CustomUserCreationForm(request.POST)
+        fm = SignupSubmitForm(request.POST)
         if fm.is_valid():
             fm.save()
             
             #return redirect(log_in)
         
     else:
-        fm = CustomUserCreationForm()
+        fm = SignupSubmitForm()
         return render(request,'sign_up.html',{'form':fm, 'details':detail_list})
-        
-        
+    
+'''   
 def log_in(request):
     
     if request.method == 'POST':
@@ -43,6 +43,5 @@ def log_in(request):
 
 def profile(request):
     return render(request,'profile.html')
-
 
 '''

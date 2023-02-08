@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'djangoapp',
 ]
 
-AUTH_USER_MODEL = 'djangoapp.CustomUser'
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,7 +56,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'djangoproject1.urls'
 ##TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 
-
+AUTH_USER_MODEL = 'djangoapp.Custom'
 
 TEMPLATES = [
     {
